@@ -30,6 +30,16 @@ device is created
 
 here, we get .apk/.app from the developers and we install it in our simulators instead of just url because it is an app
 
+command for getting the device id -
+adb devices
+
+to get the app package and app activity,
+we need to open the cmd where the apk file exist
+and then we have to type
+adb shell
+dumpsys window | grep -E 'mCurrentFocus'
+
+
 Class 2 -
 
 we have added 5 dependencies in our framework -
