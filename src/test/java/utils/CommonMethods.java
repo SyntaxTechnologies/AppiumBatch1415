@@ -3,13 +3,14 @@ package utils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import steps.PageInitializer;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class CommonMethods {
+public class CommonMethods extends PageInitializer {
 
     public static AppiumDriver driver;
 
@@ -37,6 +38,7 @@ public class CommonMethods {
         driver = new AppiumDriver(u, capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Application launched");
+        initializeObject();
     }
 
 }

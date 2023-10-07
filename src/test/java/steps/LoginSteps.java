@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utils.CofigReader;
 import utils.CommonMethods;
 
 import java.net.MalformedURLException;
@@ -15,13 +16,21 @@ public class LoginSteps extends CommonMethods {
     }
 
     @When("user enters username and password")
-    public void user_enters_username_and_password() {
-        System.out.println("test passed");
+    public void user_enters_username_and_password() throws InterruptedException {
+        loginPage.usernameField.clear();
+        loginPage.usernameField.sendKeys(CofigReader.getPropertyValue("usernamekey"));
+        Thread.sleep(2000);
+        loginPage.passwordField.clear();
+        loginPage.passwordField.sendKeys(CofigReader.getPropertyValue("passwordkey"));
+        Thread.sleep(2000);
     }
+
     @When("user clicks on login button")
-    public void user_clicks_on_login_button() {
-        System.out.println("test passed");
+    public void user_clicks_on_login_button() throws InterruptedException {
+       loginPage.loginButton.click();
+       Thread.sleep(2000);
     }
+
     @Then("user should be able to see homepage")
     public void user_should_be_able_to_see_homepage() {
         System.out.println("test passed");

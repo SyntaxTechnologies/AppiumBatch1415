@@ -77,6 +77,13 @@ we obtain the screenshot using ui automator viewer
 we rely on resource id, content desc, text, index value for mobile elements
 
 
+//*[@id='voa']
+//*[@content-desc='voa']
+//*[@text='vot']
+//*[@index='3']
+
+
+
 class 3 -
 recap -
 

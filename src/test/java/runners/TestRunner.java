@@ -13,8 +13,6 @@ import org.junit.runner.RunWith;
         //strict = true,
         dryRun = false,
         tags = "@test"
-        
-
 )
 
 
